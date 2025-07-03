@@ -36,6 +36,7 @@ app.use(express.json({ limit: "4mb" }));
 app.use(
   cors({
     origin: "https://your-frontend.vercel.app",
+    methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
