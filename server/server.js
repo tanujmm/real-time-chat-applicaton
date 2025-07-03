@@ -33,7 +33,12 @@ io.on("connection", (socket) => {
 });
 
 app.use(express.json({ limit: "4mb" }));
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://your-frontend.vercel.app",
+    credentials: true,
+  })
+);
 app.use("/api/status", (req, res) => {
   res.send("Server is live");
 });
