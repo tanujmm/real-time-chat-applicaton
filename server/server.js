@@ -56,7 +56,7 @@ await connectDB();
 //     console.log("Server started at ", PORT);
 //   });
 // }
-
+// "server": "nodemon server.js",
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log("Server started at ", PORT);
