@@ -44,9 +44,11 @@ app.get("/", (req, res) => {
 
 app.use("/api/messages", messageRouter);
 await connectDB();
-const PORT = process.env.PORT || 5000;
-server.listen(PORT, () => {
-  console.log("Server started at ", PORT);
-});
-
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 5000;
+  server.listen(PORT, () => {
+    console.log("Server started at ", PORT);
+  });
+}
+export default server;
 // WLuGj7Q4AUxFKniP mittalji1020
