@@ -35,11 +35,12 @@ io.on("connection", (socket) => {
 app.use(express.json({ limit: "4mb" }));
 app.use(
   cors({
-    origin: "https://real-time-chat-applicaton-frontend.vercel.app",
+    origin:"https://real-time-chat-applicaton-4-frontend.onrender.com",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })
 );
+    // #origin: "https://real-time-chat-applicaton-frontend.vercel.app",
 app.use("/api/status", (req, res) => {
   res.send("Server is live");
 });
